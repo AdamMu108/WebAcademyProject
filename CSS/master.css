@@ -1,0 +1,168 @@
+nav span {
+    text-decoration: none;
+    color: blanchedalmond;
+    margin: 0 10px;
+    font-size: x-large;
+}
+.navstyle {   
+    position: fixed; 
+    top: 1%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: inline-block; 
+    white-space: nowrap; 
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    z-index: 1000; /* Higher z-index to bring it on top */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+.Background {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+.new-section {
+    background-color: rgb(245, 245, 239);
+    width: auto;
+    color: white;
+    padding: 30px; 
+    text-align: right;   
+    direction: rtl; /* Ensure list bullets are on the right side */
+    height: 500px;
+}
+.new-section-text {
+    padding-right: 50px;
+     padding-bottom: 15px;
+      font-size: 120%;
+}
+.container {
+    background-color: rgb(245, 245, 239);
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center all items horizontally */
+    text-align: center; /* Center align text for h1 and p */
+    gap: 50px; /* Space between the h1, p, and images */
+    padding: 30px; /* Add padding around the container */
+}
+.circuler-image1,.circuler-image2
+ {
+    border-radius: 50%;
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; /* Ensures the image fills the circle properly */
+   z-index: 1;
+}
+.circuler-image1 {
+    margin-left: 25%;
+}
+.circuler-image2 {
+    margin-right: 25%;
+}
+.images {
+    padding-top: 300px;
+    display: flex;
+    justify-content: center; /* Center images */
+    gap: 500px; /* Add space between the images */
+    position: absolute ; /* Positioning the images within the box */
+    
+}
+.container h1 {
+    font-size: 2rem; /* Adjust heading size */
+    margin: 0; /* Remove default margin */
+}
+.container p {
+    font-size: 1rem; /* Adjust paragraph size */
+    line-height: 1.6; /* Improve line spacing for readability */
+    max-width: 600px; /* Optional: Limit the width of the paragraph */
+    margin: 0; /* Remove default margin */
+}
+.box-images {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center; /* Center the box images horizontally */
+    gap: 25px; /* Space between the box images */
+    width: 100%; /* Ensure the parent flex container spans the full width */
+}
+.box-image {
+    width: 300px;
+    height: 180px;
+    background-color: rgb(66, 62, 57);  
+    color: white;  
+    opacity: 0.5;
+    position: relative; /* Establish positioning context */
+    text-align: center; /* Center text inside the box */
+    display: flex;
+    align-items: center; /* Vertically center the content inside the box */
+    justify-content: center; /* Horizontally center the content inside the box */
+}
+.after-coachs {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center the entire content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 120vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: rgb(245, 245, 239);    /* Optional background for visibility */
+}
+
+.AC-message {
+    transform: translateY(-40px);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center the entire content vertically */
+    align-items: center; /* Center content horizontally */
+    margin-top: 0px;
+    width: 900px;
+    height: 250px;
+    background-color: rgb(66, 62, 57);
+    color: white;
+    border-radius: 10px;
+    padding: 40px; /* Add space inside the box */
+    direction: rtl; /* Proper alignment for Arabic */
+    text-align: center; /* Center text horizontally */
+    z-index: 1;
+}
+
+.AC-message h1 {
+    margin: 0; /* Remove margin around the heading */
+    font-size: 2rem; /* Adjust the heading size */
+    font-weight: bold; /* Ensure the font is bold */
+    line-height: 1.5; /* Proper line spacing for the heading */
+}
+
+.AC-message p {
+    margin-top: 20px; /* Add space between heading and paragraph */
+    line-height: 1.8; /* Improve readability */
+    font-size: 1rem; /* Adjust the font size */
+    text-align: center; /* Optional for better Arabic alignment */
+}
+
+.after-coachs h1.special {
+    padding-top: 120px;
+    margin-top: 20px; /* Add space between the .AC-message and this text */
+    font-size: 1.7rem; /* Slightly increase font size for visibility */
+    color: black; /* Adjust color to contrast the background */
+    text-align: center; /* Center the text */
+    direction: rtl; /* Proper Arabic alignment */
+    
+}
+.button {
+    background-color: burlywood;
+    width: 90px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
