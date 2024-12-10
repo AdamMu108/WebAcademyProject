@@ -31,12 +31,14 @@ body {
     height: auto;
     z-index: 0;
 }
-.new-section {
-    background-color: rgb(39, 51, 54);
-    width: auto;
-    color: white;
-    padding: 30px; 
-    text-align: right;   
-    direction: rtl; /* Ensure list bullets are on the right side */
-    height: 500px;
+
+
+.button {
+    background-color: burlywood;
+    width: 90px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
