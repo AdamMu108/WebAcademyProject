@@ -1,0 +1,42 @@
+nav span {
+    text-decoration: none;
+    color: blanchedalmond;
+    margin: 0 10px;
+    font-size: x-large;
+}
+.navstyle {   
+    position: fixed; 
+    top: 1%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: inline-block; 
+    white-space: nowrap; 
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    z-index: 1000; /* Higher z-index to bring it on top */
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.Background {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+.new-section {
+    background-color: rgb(39, 51, 54);
+    width: auto;
+    color: white;
+    padding: 30px; 
+    text-align: right;   
+    direction: rtl; /* Ensure list bullets are on the right side */
+    height: 500px;
+}
