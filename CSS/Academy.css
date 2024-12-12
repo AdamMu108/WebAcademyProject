@@ -32,7 +32,16 @@ body {
     z-index: 0;
 }
 
-
+.header{
+    background-color: rgb(39, 51, 54);
+    color: white;
+    text-align: right;
+    padding: 50px;
+    padding-bottom: 15px;
+    padding: 30px; 
+    width: auto;
+    font-size: 120%;
+}
 .button {
     background-color: burlywood;
     width: 90px;
