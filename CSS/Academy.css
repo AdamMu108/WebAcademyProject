@@ -31,12 +31,23 @@ body {
     height: auto;
     z-index: 0;
 }
-.new-section {
+
+.header{
     background-color: rgb(39, 51, 54);
-    width: auto;
     color: white;
+    text-align: right;
+    padding: 50px;
+    padding-bottom: 15px;
     padding: 30px; 
-    text-align: right;   
-    direction: rtl; /* Ensure list bullets are on the right side */
-    height: 500px;
+    width: auto;
+    font-size: 120%;
 }
+.button {
+    background-color: burlywood;
+    width: 90px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
