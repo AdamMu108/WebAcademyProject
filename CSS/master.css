@@ -4,9 +4,18 @@ nav span {
     margin: 0 10px;
     font-size: x-large;
 }
+@keyframes navSlider {
+    from {
+        top: -50px; /* Start slightly off-screen */
+    }
+    to {
+        top: 1%; /* End at the defined position */
+    }
+}
+
 .navstyle {   
     position: fixed; 
-    top: 1%; 
+    top: -50px; /* Initial position for animation */
     left: 50%; 
     transform: translateX(-50%); 
     display: inline-block; 
@@ -15,8 +24,10 @@ nav span {
     padding: 10px 20px; 
     border-radius: 10px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-    z-index: 1000; /* Higher z-index to bring it on top */
+    z-index: 1000; 
+    animation: navSlider 0.8s ease-out 0.5s forwards;
 }
+
 
 body {
     margin: 0;
