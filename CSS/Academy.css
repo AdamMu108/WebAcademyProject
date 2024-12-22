@@ -98,6 +98,7 @@ body {
     gap: 15px; /* Space between image and content */
     text-align: right;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.6); 
 }
 
 .card-1 img {
