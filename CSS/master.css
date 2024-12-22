@@ -1,6 +1,6 @@
 nav span {
     text-decoration: none;
-    color: blanchedalmond;
+    color: rgb(226, 241, 231);
     margin: 0 10px;
     font-size: x-large;
 }
@@ -11,7 +11,7 @@ nav span {
     transform: translateX(-50%); 
     display: inline-block; 
     white-space: nowrap; 
-    background: rgba(0, 0, 0, 0.6); 
+    background: rgba(36, 54, 66, 0.6); 
     padding: 10px 20px; 
     border-radius: 10px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
@@ -32,9 +32,9 @@ body {
     z-index: 0;
 }
 .new-section {
-    background-color: rgb(39, 51, 54);
+    background-color: rgb(36, 48, 44);
     width: auto;
-    color: white;
+    color: rgb(226, 241, 231);
     padding: 30px; 
     text-align: right;   
     direction: rtl; /* Ensure list bullets are on the right side */
@@ -46,8 +46,9 @@ body {
       font-size: 120%;
 }
 .container {
-    background-color: rgb(104, 136, 115);
+    background-color: rgb(36, 54, 66);
     display: flex;
+    color: rgb(226, 241, 231);
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center all items horizontally */
     text-align: center; /* Center align text for h1 and p */
@@ -96,8 +97,8 @@ body {
 .box-image {
     width: 300px;
     height: 180px;
-    background-color: rgb(66, 62, 57);  
-    color: white;
+    background-color: rgb(56, 116, 120);  
+    color: rgb(226, 241, 231);
     opacity: 0.6;
     position: relative; /* Establish positioning context */
     text-align: center; /* Center text inside the box */
@@ -112,7 +113,7 @@ body {
     align-items: center; /* Center content horizontally */
     height: 120vh; /* Full viewport height */
     margin: 0; /* Remove default margin */
-    background-color: rgb(39, 51, 54);    /* Optional background for visibility */
+    background-color: rgb(36, 48, 44);    /* Optional background for visibility */
 }
 
 .AC-message {
@@ -125,7 +126,7 @@ body {
     width: 900px;
     height: 250px;
     background-color: rgb(66, 62, 57);
-    color: white;
+    color: rgb(226, 241, 231);
     border-radius: 10px;
     padding: 40px; /* Add space inside the box */
     direction: rtl; /* Proper alignment for Arabic */
@@ -151,18 +152,16 @@ body {
     padding-top: 120px;
     margin-top: 20px; /* Add space between the .AC-message and this text */
     font-size: 1.7rem; /* Slightly increase font size for visibility */
-    color: black; /* Adjust color to contrast the background */
+    color: rgb(226, 241, 231); /* Adjust color to contrast the background */
     text-align: center; /* Center the text */
     direction: rtl; /* Proper Arabic alignment */
     
 }
 .button {
-    background-color: burlywood;
+    background-color: rgb(66, 62, 57);
     width: 90px;
     height: 40px;
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
 }
-
-
