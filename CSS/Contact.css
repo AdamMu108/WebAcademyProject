@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    direction: rtl; /* Ensure proper alignment for Arabic text */
+    font-family: Arial, sans-serif;
+}
+
+.message{
+
+    background-color: white;
+    color: #6ac098;
+    text-align: center;
+    padding: 30px;
+    font-size: 120%;
+    height: 250px;
+}
+
+
+.contact-alignment{
+    display: flex;
+    gap: 350px;
+    margin-right: 50px;
+}
+
+
+.form{
+    color: #6ac098;
+}
+
+
+.input-fields div{
+    padding: 20px;
+}
+
+.input-fields input{
+    width: 450px;
+    height: 25px;
+    border-radius: 7px;
+    color: #6ac098;
+}
+
+.input-fields textarea{
+    width: 450px;
+    height: 50px;
+    border-radius: 7px;
+    color: #6ac098;
+}
+
+#contact-button{
+    width: 455px;
+    height: 35px;
+    text-align: center;
+    background-color: #d9eddf;
+    margin-right: 22px;
+    
+}
+
+.input-fields input,textarea,button{
+    box-shadow: 0 4px 10px rgba(223, 255, 233, 0.6);
+    border-radius: 7px;
+}
+
+.info{
+    margin-right: 70px;
+    margin-left: 10px;
+    color: #6ac098;
+}
+
+.info p{
+    color: #6ac098;
+    font-size: 75%;
+}

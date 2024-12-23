@@ -6,21 +6,21 @@ nav span {
 }
 @keyframes navSlider {
     from {
-        top: -50px; /* Start slightly off-screen */
+        top: -50px; 
     }
     to {
-        top: 1%; /* End at the defined position */
+        top: 1%; 
     }
 }
 
 .navstyle {   
     position: fixed; 
-    top: -50px; /* Initial position for animation */
+    top: -50px; 
     left: 50%; 
     transform: translateX(-50%); 
     display: inline-block; 
     white-space: nowrap; 
-    background: rgba(36, 54, 66, 0.6); 
+    background: rgba(56, 75, 65, 0.8); 
     padding: 10px 20px; 
     border-radius: 10px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
@@ -43,9 +43,9 @@ body {
     z-index: 0;
 }
 .new-section {
-    background-color: rgb(36, 48, 44);
+    background-color: #ffffff;
     width: auto;
-    color: rgb(226, 241, 231);
+    color: #6ac098;
     padding: 30px; 
     text-align: right;   
     direction: rtl; /* Ensure list bullets are on the right side */
@@ -57,14 +57,17 @@ body {
       font-size: 120%;
 }
 .container {
-    background-color: rgb(36, 54, 66);
+    background-color: #f0faf5;
     display: flex;
-    color: rgb(226, 241, 231);
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #6ac098;
     flex-direction: column; /* Stack items vertically */
     align-items: center; /* Center all items horizontally */
     text-align: center; /* Center align text for h1 and p */
     gap: 50px; /* Space between the h1, p, and images */
     padding: 30px; /* Add padding around the container */
+    height: 500px;
 }
 .circuler-image1,.circuler-image2
  {
@@ -168,11 +171,12 @@ body {
     
 }
 .button {
-    background-color: rgb(141, 131, 119);
-    color: rgb(226, 241, 231);
+    background-color: #d9eddf;
+    color: #6ac098;
     width: 90px;
     height: 40px;
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.6); 
 }
