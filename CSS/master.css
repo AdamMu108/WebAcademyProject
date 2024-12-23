@@ -6,21 +6,21 @@ nav span {
 }
 @keyframes navSlider {
     from {
-        top: -50px; /* Start slightly off-screen */
+        top: -50px; 
     }
     to {
-        top: 1%; /* End at the defined position */
+        top: 1%; 
     }
 }
 
 .navstyle {   
     position: fixed; 
-    top: -50px; /* Initial position for animation */
+    top: -50px; 
     left: 50%; 
     transform: translateX(-50%); 
     display: inline-block; 
     white-space: nowrap; 
-    background: rgba(36, 54, 66, 0.6); 
+    background: rgba(65, 129, 99, 0.6); 
     padding: 10px 20px; 
     border-radius: 10px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
@@ -65,6 +65,7 @@ body {
     text-align: center; /* Center align text for h1 and p */
     gap: 50px; /* Space between the h1, p, and images */
     padding: 30px; /* Add padding around the container */
+    height: 500px;
 }
 .circuler-image1,.circuler-image2
  {
@@ -168,11 +169,12 @@ body {
     
 }
 .button {
-    background-color: rgb(141, 131, 119);
-    color: rgb(226, 241, 231);
+    background-color: #d9eddf;
+    color: #6ac098;
     width: 90px;
     height: 40px;
     font-size: 1.2rem;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.6); 
 }
