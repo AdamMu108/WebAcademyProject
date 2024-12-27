@@ -20,6 +20,7 @@ body {
     display: flex;
     gap: 300px;
     margin-right: 50px;
+    height: 750px;
 }
 
 
@@ -30,29 +31,44 @@ body {
 
 .input-fields div{
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-fields label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold; 
 }
 
 .input-fields input{
     width: 450px;
-    height: 25px;
-    border-radius: 7px;
+    padding: 8px;
+    border: 1px solid #ccc; /* Optional: Add a border */
+    font-size: 14px;
     color: #6ac098;
+    
 }
 
 .input-fields textarea{
     width: 450px;
-    height: 50px;
-    border-radius: 7px;
+    padding: 8px;
+    border: 1px solid #ccc; /* Optional: Add a border */
+    font-size: 14px; /* Consistent font size */
+    height: 80px;
     color: #6ac098;
 }
 
 #contact-button{
-    width: 455px;
+    width: 465px;
     height: 35px;
     text-align: center;
     background-color: #d9eddf;
     margin-right: 22px;
-    
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 .input-fields input,textarea,button{
