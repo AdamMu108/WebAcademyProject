@@ -42,8 +42,8 @@ body {
 }
 .new-section-text {
     padding-right: 50px;
-     padding-bottom: 15px;
-      font-size: 120%;
+    padding-bottom: 15px;
+    font-size: 120%;
 }
 .container {
     background-color: rgb(104, 136, 115);
@@ -164,5 +164,37 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+button:hover {
+    background-color: lightblue;
+    color: white;
+}
+/* Style for the container div */
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full-screen height */
+    overflow: hidden;
+  }
 
+  /* Style for the video */
+  .video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Place video behind other content */
+  }
 
+  /* Centered content on top of the video */
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }

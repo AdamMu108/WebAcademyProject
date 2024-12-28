@@ -1,0 +1,53 @@
+nav span {
+    text-decoration: none;
+    color: blanchedalmond;
+    margin: 0 10px;
+    font-size: x-large;
+}
+.navstyle {   
+    position: fixed; 
+    top: 1%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: inline-block; 
+    white-space: nowrap; 
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    z-index: 1000; /* Higher z-index to bring it on top */
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.Background {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+}
+
+.header {
+    background-color: rgb(39, 51, 54);
+    color: white;
+    text-align: right;
+    padding: 50px;
+    padding-bottom: 15px;
+    padding: 30px; 
+    width: auto;
+    font-size: 120%;
+}
+.button {
+    background-color: burlywood;
+    width: 90px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
