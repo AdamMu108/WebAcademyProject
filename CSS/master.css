@@ -1,27 +1,39 @@
 nav span {
     text-decoration: none;
-    color: blanchedalmond;
+    color: rgb(226, 241, 231);
     margin: 0 10px;
     font-size: x-large;
 }
-.navstyle {   
-    position: fixed; 
-    top: 1%; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    display: inline-block; 
-    white-space: nowrap; 
-    background: rgba(0, 0, 0, 0.6); 
-    padding: 10px 20px; 
-    border-radius: 10px; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-    z-index: 1000; /* Higher z-index to bring it on top */
+
+@keyframes navSlider {
+    from {
+        top: -50px;
+    }
+    to {
+        top: 1%;
+    }
+}
+
+.navstyle {
+    position: fixed;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    white-space: nowrap;
+    background: rgba(56, 75, 65, 0.8);
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: navSlider 0.8s ease-out 0.5s forwards;
 }
 
 body {
     margin: 0;
     padding: 0;
 }
+
 .Background {
     display: block;
     position: relative;
@@ -31,153 +43,169 @@ body {
     height: auto;
     z-index: 0;
 }
+
 .new-section {
-    background-color: rgb(39, 51, 54);
+    background-color: #ffffff;
     width: auto;
-    color: white;
-    padding: 30px; 
-    text-align: right;   
-    direction: rtl; /* Ensure list bullets are on the right side */
+    color: #6ac098;
+    padding: 30px;
+    text-align: right;
+    direction: rtl;
     height: 500px;
 }
+
 .new-section-text {
     padding-right: 50px;
     padding-bottom: 15px;
     font-size: 120%;
 }
+
 .container {
-    background-color: rgb(104, 136, 115);
+    background-color: #f0faf5;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center all items horizontally */
-    text-align: center; /* Center align text for h1 and p */
-    gap: 50px; /* Space between the h1, p, and images */
-    padding: 30px; /* Add padding around the container */
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #6ac098;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+    padding: 30px;
+    height: 500px;
 }
-.circuler-image1,.circuler-image2
- {
+
+.circuler-image1, .circuler-image2 {
     border-radius: 50%;
-    width: 150px; 
-    height: 150px; 
-    object-fit: cover; /* Ensures the image fills the circle properly */
-   z-index: 1;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    z-index: 1;
 }
+
 .circuler-image1 {
     margin-left: 25%;
 }
+
 .circuler-image2 {
     margin-right: 25%;
 }
+
 .images {
     padding-top: 300px;
     display: flex;
-    justify-content: center; /* Center images */
-    gap: 500px; /* Add space between the images */
-    position: absolute ; /* Positioning the images within the box */
-    
+    justify-content: center;
+    gap: 500px;
+    position: absolute;
 }
+
 .container h1 {
-    font-size: 2rem; /* Adjust heading size */
-    margin: 0; /* Remove default margin */
+    font-size: 2rem;
+    margin: 0;
 }
+
 .container p {
-    font-size: 1rem; /* Adjust paragraph size */
-    line-height: 1.6; /* Improve line spacing for readability */
-    max-width: 600px; /* Optional: Limit the width of the paragraph */
-    margin: 0; /* Remove default margin */
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0;
 }
+
 .box-images {
     padding-top: 50px;
     display: flex;
-    justify-content: center; /* Center the box images horizontally */
-    gap: 25px; /* Space between the box images */
-    width: 100%; /* Ensure the parent flex container spans the full width */
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
 }
+
 .box-image {
     width: 300px;
     height: 180px;
-    background-color: rgb(66, 62, 57);  
-    color: white;
-    opacity: 0.6;
-    position: relative; /* Establish positioning context */
-    text-align: center; /* Center text inside the box */
+    background-color: rgba(56, 116, 120, 0.6);
+    color: rgb(226, 241, 231);
+    position: relative;
+    text-align: center;
     display: flex;
-    align-items: center; /* Vertically center the content inside the box */
-    justify-content: center; /* Horizontally center the content inside the box */
+    align-items: center;
+    justify-content: center;
 }
+
 .after-coachs {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center the entire content vertically */
-    align-items: center; /* Center content horizontally */
-    height: 120vh; /* Full viewport height */
-    margin: 0; /* Remove default margin */
-    background-color: rgb(39, 51, 54);    /* Optional background for visibility */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120vh;
+    margin: 0;
+    background-color: rgb(36, 48, 44);
 }
 
 .AC-message {
     transform: translateY(-40px);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center the entire content vertically */
-    align-items: center; /* Center content horizontally */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 0px;
     width: 900px;
     height: 250px;
     background-color: rgb(66, 62, 57);
-    color: white;
+    color: rgb(226, 241, 231);
     border-radius: 10px;
-    padding: 40px; /* Add space inside the box */
-    direction: rtl; /* Proper alignment for Arabic */
-    text-align: center; /* Center text horizontally */
+    padding: 40px;
+    direction: rtl;
+    text-align: center;
     z-index: 1;
 }
 
 .AC-message h1 {
-    margin: 0; /* Remove margin around the heading */
-    font-size: 2rem; /* Adjust the heading size */
-    font-weight: bold; /* Ensure the font is bold */
-    line-height: 1.5; /* Proper line spacing for the heading */
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
 .AC-message p {
-    margin-top: 20px; /* Add space between heading and paragraph */
-    line-height: 1.8; /* Improve readability */
-    font-size: 1rem; /* Adjust the font size */
-    text-align: center; /* Optional for better Arabic alignment */
+    margin-top: 20px;
+    line-height: 1.8;
+    font-size: 1rem;
+    text-align: center;
 }
 
 .after-coachs h1.special {
     padding-top: 120px;
-    margin-top: 20px; /* Add space between the .AC-message and this text */
-    font-size: 1.7rem; /* Slightly increase font size for visibility */
-    color: black; /* Adjust color to contrast the background */
-    text-align: center; /* Center the text */
-    direction: rtl; /* Proper Arabic alignment */
-    
+    margin-top: 20px;
+    font-size: 1.7rem;
+    color: rgb(226, 241, 231);
+    text-align: center;
+    direction: rtl;
 }
+
 .button {
-    background-color: burlywood;
+    background-color: #d9eddf;
+    color: #6ac098;
     width: 90px;
     height: 40px;
     font-size: 1.2rem;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
+    box-shadow: 0 2px 10px rgba(56, 56, 56, 0.6);
 }
-button:hover {
+
+.button:hover {
     background-color: lightblue;
     color: white;
 }
-/* Style for the container div */
+
 .video-background {
     position: relative;
     width: 100%;
-    height: 100vh; /* Full-screen height */
+    height: 100vh;
     overflow: hidden;
-  }
+}
 
-  /* Style for the video */
-  .video-background video {
+.video-background video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -185,11 +213,10 @@ button:hover {
     min-width: 100%;
     min-height: 100%;
     object-fit: cover;
-    z-index: -1; /* Place video behind other content */
-  }
+    z-index: -1;
+}
 
-  /* Centered content on top of the video */
-  .content {
+.content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -197,4 +224,4 @@ button:hover {
     color: white;
     text-align: center;
     font-family: Arial, sans-serif;
-  }
+}

@@ -4,6 +4,7 @@ nav span {
     margin: 0 10px;
     font-size: x-large;
 }
+
 .navstyle {   
     position: fixed; 
     top: 1%; 
@@ -15,11 +16,14 @@ nav span {
     padding: 10px 20px; 
     border-radius: 10px; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
-    z-index: 1000; /* Higher z-index to bring it on top */
+    z-index: 1000;
 }
+
 body {
     margin: 0;
     padding: 0;
+    direction: rtl; /* Ensure proper alignment for Arabic text */
+    font-family: Arial, sans-serif;
 }
 
 .Background {
@@ -36,12 +40,10 @@ body {
     background-color: rgb(39, 51, 54);
     color: white;
     text-align: right;
-    padding: 50px;
-    padding-bottom: 15px;
     padding: 30px; 
-    width: auto;
     font-size: 120%;
 }
+
 .button {
     background-color: burlywood;
     width: 90px;
@@ -51,3 +53,112 @@ body {
     cursor: pointer;
 }
 
+.Academy-cards {
+    margin: 10px;
+    border-radius: 10px;
+    text-align: right;
+    padding: 50px; 
+    width: auto;
+    font-size: 120%;
+    height: 600px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-color: #f0faf5;
+    color: #6ac098;
+}
+
+.cards-align {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card-1 {
+    background-color: #d9eddf;
+    flex: 1;
+    min-width: 300px;
+    padding: 20px; 
+    font-size: 120%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 15px;
+    text-align: right;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.6); 
+}
+
+.card-1 img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card-1 .content {
+    flex: 1;
+}
+
+.card-1 h2 {
+    margin: 0;
+    font-size: 140%;
+    color: #6ac098;
+    padding-top: 65px;
+    padding-right: 15px;
+}
+
+.card-1 p {
+    line-height: 1.5;
+    padding-right: 15px;
+    color: #6ac098;
+}
+
+.hints {
+    margin-top: 50px;
+    padding: 50px;
+    height: 1000px;
+    background: linear-gradient(to top, #6ac098, #ffffff 70%);
+    color: #6ac098;
+    text-align: right;
+    font-size: 120%;
+}
+
+.hints-card-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hints-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    width: 900px;
+    height: 250px;
+    background-color: #d9eddf;
+    color: #6ac098;
+    border-radius: 10px;
+    padding: 40px;
+    direction: rtl;
+    text-align: center;
+    z-index: 1;
+    font-size: 120%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0,0.6); 
+}
+
+.footer {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    color: white;
+}
