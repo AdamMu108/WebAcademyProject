@@ -5,6 +5,8 @@
     <title>FootBall Academy</title>
     <link rel="stylesheet" href="../CSS/master.css">
     <link rel="stylesheet" href="../CSS/Contact.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <style>
 
     </style>
@@ -41,36 +43,49 @@
       </div>
 
       <div class="contact-alignment">
-        
-        <div class="info">
-            
+        <div class="info"> 
             <div class="info-cards">
+                <i id="location-icon" class="fa-solid fa-location-dot"></i>
+                <div class="text-content">
                 <h3>شارع رفيديا , رفيديا , نابلس </h3>
                 <p>نابلس</p>
+                </div>
             </div>
 
             <div class="info-cards">
+                <i id="time-icon" class="fa-solid fa-clock"></i>
+                <div class="text-content">
                 <h3>ساعات العمل</h3>
                 <p>
                     السبت - الخميس 
                     <br>
                     صباحا 9:00 - مساءا 5:00
                  </p>
+                </div>
             </div>
 
             <div class="info-cards">
-                <h3>البريد الالكتروني </h3>
-                <p>test@gmail.com</p>
+                <i class="fa-solid fa-envelope"></i>
+                <div class="text-content">
+                    <h3>البريد الالكتروني </h3>
+                    <p>test@gmail.com</p>
+                </div>
             </div>
 
             <div class="info-cards">
+                <i class="fa-solid fa-phone"></i>
+                <div class="text-content">
                 <h3>رقم الهاتف</h3>
-                <p>059 000 0000</p>
+                <p class="number-alignment">059 000 0000</p>
+            </div>
             </div>
 
             <div class="info-cards">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div class="text-content">
                 <h3>واتساب</h3>
-                <p>059 000 0000</p>
+                <p class="number-alignment">059 000 0000</p>
+            </div>
             </div>
 
         </div>
@@ -84,19 +99,23 @@
             <div class="input-fields">
 
                 <div>
-                    <input type="text" required title="الاسم الكامل"> 
+                    <label for="fName">الاسم الكامل</label>
+                    <input type="text" required id="fName" placeholder="ادخل اسمك الكامل" title="الاسم الكامل"> 
                 </div>
                 
                  <div>
-                    <input type="text" required title="البريد الالكتروني"> 
+                    <label for="email">البريد الالكتروني</label>
+                    <input type="text" required title="البريد الالكتروني" id="email" placeholder="ادخل بريدك الالكتروني"> 
                 </div>
                 
                 <div>
-                    <input type="text" required title="رقم الهاتف"> 
+                    <label for="phone">رقم الهاتف</label>
+                    <input type="text" required title="رقم الهاتف" id="phone" placeholder="ادخل رقم هاتفك"> 
                 </div>
             
                 <div>
-                    <textarea required title="الرسالة">ادخل رسالتك</textarea>
+                    <label for="the-message">الرسالة</label>
+                    <textarea required title="الرسالة" id="the-message" placeholder="ادخل رسالتك"></textarea>
                 </div>
 
                 <button id="contact-button" >ارسال</button>
@@ -104,10 +123,17 @@
 
         </div>
 
-
-       
-
       </div>
 
+
+      <div class="map">
+        <iframe id="map-iframe" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d5676.364048644867!2d35.22479964945128!3d32.22615101842358!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1735325963337!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="footer">
+        <h2>!!كن جزءا من فريقنا</h2>
+        <button class="button">سجل الان</button>
+    </div>
+    
 </body>
 </html>
