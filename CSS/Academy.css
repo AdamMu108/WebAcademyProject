@@ -1,3 +1,24 @@
+nav span {
+    text-decoration: none;
+    color: blanchedalmond;
+    margin: 0 10px;
+    font-size: x-large;
+}
+
+.navstyle {   
+    position: fixed; 
+    top: 1%; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    display: inline-block; 
+    white-space: nowrap; 
+    background: rgba(0, 0, 0, 0.6); 
+    padding: 10px 20px; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); 
+    z-index: 1000;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -16,14 +37,20 @@ body {
 }
 
 .header {
-    background-color: #ffffff;
-    color: #6ac098;
+    background-color: rgb(39, 51, 54);
+    color: white;
     text-align: right;
-    padding: 50px;
-    margin-top: 25px;
-    margin-bottom: 50px; 
-    width: auto;
+    padding: 30px; 
     font-size: 120%;
+}
+
+.button {
+    background-color: burlywood;
+    width: 90px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .Academy-cards {
@@ -42,38 +69,38 @@ body {
 
 .cards-align {
     margin-top: 50px;
-    display: flex; /* Enable Flexbox */
-    justify-content: space-between; /* Space between the cards */
-    align-items: stretch; /* Ensure equal height */
-    gap: 20px; /* Space between cards */
-    flex-wrap: wrap; /* Wrap cards on smaller screens */
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card-1 {
     background-color: #d9eddf;
-    flex: 1; /* Equal width for all cards */
-    min-width: 300px; /* Prevent shrinking too much */
+    flex: 1;
+    min-width: 300px;
     padding: 20px; 
     font-size: 120%;
     box-sizing: border-box;
-    display: flex; /* Align image and text side by side */
-    flex-direction: row-reverse; /* Reverse alignment to place image on the right */
-    align-items: flex-start; /* Align content to the top */
-    gap: 15px; /* Space between image and content */
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 15px;
     text-align: right;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0,0.6); 
 }
 
 .card-1 img {
-    width: 100px; /* Set image width */
-    height: 100px; /* Set image height */
-    object-fit: cover; /* Maintain aspect ratio and cover space */
-    border-radius: 8px; /* Rounded corners */
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 .card-1 .content {
-    flex: 1; /* Allow text to take up the remaining space */
+    flex: 1;
 }
 
 .card-1 h2 {
@@ -102,8 +129,8 @@ body {
 
 .hints-card-align {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center the entire content vertically */
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
