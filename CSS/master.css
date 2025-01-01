@@ -60,7 +60,7 @@ body {
     font-size: 120%;
 }
 
-.container {
+.container1{
     background-color: #f0faf5;
     display: flex;
     margin-left: 30px;
@@ -98,12 +98,12 @@ body {
     position: absolute;
 }
 
-.container h1 {
+.container1 h1 {
     font-size: 2rem;
     margin: 0;
 }
 
-.container p {
+.container1 p {
     font-size: 1rem;
     line-height: 1.6;
     max-width: 600px;
