@@ -182,8 +182,8 @@ body {
 }
 
 .button {
-    background-color: #d9eddf;
-    color: #6ac098;
+    background-color: #6ac098;
+    color: white;
     width: 90px;
     height: 40px;
     font-size: 1.2rem;
@@ -194,8 +194,7 @@ body {
 }
 
 .button:hover {
-    background-color: lightblue;
-    color: white;
+    background-color: #5a9f7a;
 }
 
 .video-background {

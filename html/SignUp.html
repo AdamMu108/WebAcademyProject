@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>FootBall Academy</title>
     <link rel="stylesheet" href="../CSS/master.css">
+    <link rel="stylesheet" href="../CSS/SignUp.css">
     <style>
     </style>
 
@@ -36,4 +37,59 @@
         </a>  
       </nav>
 </body>
+<div class="signup-alignment">
+    <h1>اكتشف البطل الذي بداخلك. سجّل الآن وابدأ رحلتك نحو النجاح في كرة القدم</h1>
+
+    <div class="SignUp-form">
+        <h2>استمارة التسجيل</h2>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="fName">الاسم الكامل</label>
+                <input type="text" required id="fName" title="الاسم الكامل"> 
+            </div>
+            <div class="form-group">
+                <label for="email">البريد الالكتروني</label>
+                <input type="email" required title="البريد الالكتروني" id="email"> 
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" required title="كلمة المرور" id="password">
+            </div>
+            <div class="form-group">
+                <label for="conf-password">تأكيد كلمة المرور</label>
+                <input type="password" required title="تأكيد كلمة المرور" id="conf-password">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="date-of-birth">تاريخ الميلاد</label>
+                <input type="date" required title="تاريخ الميلاد" id="date-of-birth" max="2017-1-1" min="2011-1-1"> 
+            </div>
+            <div class="form-group">
+                <label for="blood-type">فصيلة الدم</label>
+                <select required title="فصيلة الدم" id="blood-type">
+                    <option value="O+">O+</option>
+                    <option value="A+">A+</option>
+                    <option value="B+">B+</option>
+                    <option value="AB+">AB+</option>
+                    <option value="A-">A-</option>
+                    <option value="B-">B-</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O-">O-</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <button id="request-button">ارسال الطلب</button>
+        </div>
+    </div>
+</div>
+
+
 </html>
