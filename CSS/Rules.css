@@ -1,5 +1,6 @@
 /* General text alignment and font styling for Arabic content */
 p, li, ol p {
+    margin: 20px;
     text-align: right;
     direction: rtl;
     font-family: "Cairo", "Arial", sans-serif; /* A more modern, readable font */
@@ -21,13 +22,13 @@ li {
 
 /* Styling for top-level ordered list (ol) items */
 ol > li {
-    background-color: #e3f2fd; /* Light blue background */
+    background-color: #d9eddf; /* Light blue background */
     padding: 15px 10px; /* Balanced padding for a clean look */
     border-radius: 8px; /* Smooth rounded edges */
     margin-bottom: 15px; /* Space between main list items */
     text-decoration: underline;
     font-weight: bold;
-    color: #0d47a1; /* Bold blue color for emphasis */
+    color: #6ac098; /* Bold blue color for emphasis */
     font-size: 20px; /* Larger font size for main headings */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a 3D effect */
     word-wrap: break-word; /* Prevent horizontal scrolling */

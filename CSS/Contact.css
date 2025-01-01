@@ -47,7 +47,7 @@ body {
     border: 1px solid #ccc; /* Optional: Add a border */
     font-size: 14px;
     color: #6ac098;
-    
+    transition: transform 0.3s ease;
 }
 
 .input-fields textarea{
@@ -57,6 +57,11 @@ body {
     font-size: 14px; /* Consistent font size */
     height: 80px;
     color: #6ac098;
+    transition: transform 0.3s ease;
+}
+
+.input-fields textarea:hover,input:hover{
+    transform: scale(1.02);
 }
 
 #contact-button{
@@ -71,9 +76,11 @@ body {
     border-radius: 7px;
     cursor: pointer;
     font-size: 14px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 #contact-button:hover {
+    transform: scale(1.02);
     background-color: #5a9f7a;
 }
 

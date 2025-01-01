@@ -18,7 +18,7 @@
   align-items: center;
   gap: 40px;
   position: relative;
-  background-color: rgb(45, 75, 45) ;
+  background-color: #ffffff ;
 }
 
 .fourBoxes {
@@ -27,13 +27,15 @@
   gap: 20px;
   position: relative;
   z-index: 2;
-  background-color: rgb(45, 75, 45) ;
+  background-color: #ffffff ;
 }
 
 .Box1, .Box2 {
-  background-color: rgb(55, 86, 86);
-  color: white;
+  background-color: #6ac098;
+  color: #ffffff;
   display: flex;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -42,12 +44,18 @@
   overflow-wrap: break-word;
   word-break: break-word;
   font-size: large;
+  box-shadow: 0 4px 10px rgba(37, 37, 37, 0.6); 
 }
 
+.Box1:hover{
+  transform: scale(1.02);
+  background-color: #5a9f7a;
+}
 .Box1 {
   height: 100px;
   width: 275px;
   margin-top: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .Box2 {
@@ -56,16 +64,21 @@
 }
 
 .gridBoxes {
-  background-color: rgb(45, 75, 45) ;
+  background-color: #d9eddf ;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 40px;
   justify-items: center;
   margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(80, 80, 80, 0.6); 
+  padding: 20px; 
+  box-sizing: border-box; 
 }
 
+
 p.ageRangeText {
-  background-color: rgb(45, 75, 45) ;
+  color: #6ac098 ;
   margin-top: 50px;
   font-size: 50px;
 }
@@ -93,7 +106,7 @@ p.ageRangeText {
   padding-top: 120px;
   margin-top: 800px; /* Add space between the .AC-message and this text */
   font-size: 1.7rem; /* Slightly increase font size for visibility */
-  color: black; /* Adjust color to contrast the background */
+  color: #6ac098; /* Adjust color to contrast the background */
   text-align: center; /* Center the text */
   direction: rtl; /* Proper Arabic alignment */
 }
