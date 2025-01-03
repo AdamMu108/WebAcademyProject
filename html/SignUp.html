@@ -10,7 +10,7 @@
     <style>
     </style>
 
-<script>
+<script src="../JavaScript/SignUpButton.js">
     
 </script>
 
@@ -46,6 +46,34 @@
             </a>
           </nav>
 </body>
+
+<div class="programs-card-alignment animate-from-below">
+    <div class="programs-card">
+        <h2>شهري</h2>
+        <p class="price">11.99 دولار/شهريًا</p>
+        <ul>
+            <li>اشتراك شهري مرن</li>
+            <li>إمكانية الوصول إلى جميع الفعاليات</li>
+            <li>خدمات تدريبية مميزة</li>
+            <li>خصومات خاصة للأعضاء</li>
+        </ul>
+        <button class="btn">اشترك الآن</button>
+    </div>
+
+    <div class="programs-card">
+        <h2>سنوي</h2>
+        <p class="price">199.99 دولار/سنوياً</p>
+        <ul>
+            <li>اشتراك اقتصادي سنوي</li>
+            <li>إمكانية الوصول إلى كافة المرافق</li>
+            <li>حصص تدريبية متقدمة</li>
+            <li>مزايا إضافية للأعضاء السنويين</li>
+        </ul>
+        <button class="btn">اشترك الآن</button>
+    </div>
+</div>
+
+
 <div class="signup-alignment animate-from-below" >
     <h1>اكتشف البطل الذي بداخلك. سجّل الآن وابدأ رحلتك نحو النجاح في كرة القدم</h1>
 
@@ -72,6 +100,21 @@
             <div class="form-group">
                 <label for="password">كلمة المرور</label>
                 <input type="password" required title="كلمة المرور" id="password">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="subs-type">نوع الاشتراك</label>
+                <select required title="نوع الاشتراك" id="subs-type">
+                    <option value="monthly">شهري</option>
+                    <option value="yearly">سنوي</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="phone-number">رقم الهاتف</label>
+                <input type="text" required title="رقم الهاتف" id="phone-number"> 
             </div>
         </div>
 
