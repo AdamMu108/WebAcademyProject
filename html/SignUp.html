@@ -22,7 +22,12 @@
     
 </script>
 
-
+<script src="../JavaScript/transformToLoginButton.js">
+    
+</script>
+<script src="../JavaScript/loginButton.js">
+    
+</script>
 </head>
 <body>
         <img src="../images/football-training-equipment-4.jpg" alt="Background image" class="Background">
@@ -140,10 +145,38 @@
                     <option value="O-">O-</option>
                 </select>
             </div>
+            
         </div>
-
+        
         <div class="form-row">
+            <button id="already-subscribed" type="button" class="button">تسجيل الدخول</button>
             <button id="request-button" type="button">ارسال الطلب</button>
+        </div>
+    </div>
+
+      <!-- Login Form -->
+      <div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
+        <h2>تسجيل الدخول</h2>
+        <div class="form-row">
+           
+            <div class="form-group">
+                <label for="login-email">البريد الالكتروني</label>
+                <input type="email" required title="البريد الالكتروني" id="login-email"> 
+            </div>
+           
+        </div>
+        <div class="form-row">
+           
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" required title="كلمة المرور" id="login-password">
+            </div>
+        
+           
+        </div>
+        <div class="form-row">
+            <button id="back-to-signup" type="button" class="button">ارسال الطلب</button>
+            <button id="login-button" type="button">تسجيل الدخول</button>
         </div>
     </div>
 </div>
