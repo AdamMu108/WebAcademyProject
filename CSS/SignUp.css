@@ -74,3 +74,6 @@
     background-color: #5a9f7a;
 }
 
+html {
+    scroll-behavior: smooth;
+}
