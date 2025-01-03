@@ -94,7 +94,7 @@ body {
     margin-top: 50px;
     padding: 50px;
     height: 1000px;
-    background: linear-gradient(to top, #5a9f7a, #ffffff 70%);
+    background: #ffffff;
     color: #6ac098;
     text-align: right;
     font-size: 120%;
@@ -133,5 +133,5 @@ body {
     justify-content: center;
     align-items: center;
     padding: 50px;
-    color: white;
+    color: #6ac098;
 }
