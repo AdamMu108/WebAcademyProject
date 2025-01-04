@@ -83,33 +83,47 @@ $conn->close();
     
 </script>
 
+<script src="../JavaScript/transformToLoginButton.js">
+    
+</script>
+
 
 </head>
 <body>
         <img src="../images/football-training-equipment-4.jpg" alt="Background image" class="Background">
         <nav class="navstyle">
-            <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>الصفحة الرئيسية</span>
-            </a> 
-            <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>الأكاديمية</span>
-            </a> 
-            <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>المنهج</span>
-            </a> 
-            <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>الشروط والأحكام</span>
-            </a> 
-            <a href="../html/Contact.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>تواصل معنا</span>
-            </a> 
-            <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>الأخبار</span>
-            </a> 
-            <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-                <span>سجِّل الآن</span>
-            </a>
-          </nav>
+        <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الصفحة الرئيسية</span> 
+        </a> 
+        <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الأكاديمية</span>
+        </a> 
+        <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>المنهج</span>
+        </a> 
+        <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الشروط والأحكام</span>
+        </a> 
+        <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>تواصل معنا</span>
+        </a> 
+        <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الأخبار</span>
+        </a> 
+        <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>سجِّل الآن</span>
+        </a>
+       <!-- Dropdown Menu -->
+       <div class="dropdown">
+        <a href="#" style="text-decoration: none; color: blanchedalmond;">
+            <span>قائمة الخيارات</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
+            <a href="#"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
+        </div>
+    </div>
+  </nav>
 </body>
 
 <div class="programs-card-alignment animate-from-below" id="programs-card">
@@ -222,8 +236,13 @@ $conn->close();
             </div>
 
             <div class="form-row">
+<<<<<<< Updated upstream
             <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
             <button id="request-button" type="button">ارسال الطلب</button>
+=======
+                <button id="already-subscribed" type="button" class="button">تسجيل الدخول</button>
+                <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
+>>>>>>> Stashed changes
         </div>
     </div>
 

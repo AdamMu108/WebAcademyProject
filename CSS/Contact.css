@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    text-align: right;
     direction: rtl; /* Ensure proper alignment for Arabic text */
     font-family: Arial, sans-serif;
 }
@@ -167,4 +168,21 @@ body {
     align-items: center;
     padding: 50px;
     color:  #6ac098;
+}
+
+.response-message {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6ac098;
+    text-align: center; /* Center the text */
+    display: flex;
+    justify-content: center; /* Align the content horizontally */
+    align-items: center; /* Align the content vertically */
+    min-height: 30px; /* Optional: Ensure some space is reserved for the message */
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    
 }

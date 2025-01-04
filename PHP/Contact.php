@@ -1,3 +1,54 @@
+<?php
+// Include database connection
+include '../PHP/dp_connection.php';
+
+// Initialize an empty message
+$message = "";
+$errorMessages = "";
+
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $full_name = $_POST['full_name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $phone_number = $_POST['phone_number'] ?? '';
+    $user_message = $_POST['message'] ?? '';
+
+    // Sanitize input
+    $full_name = $conn->real_escape_string($full_name);
+    $email = $conn->real_escape_string($email);
+    $phone_number = $conn->real_escape_string($phone_number);
+    $user_message = $conn->real_escape_string($user_message);
+
+    // Validate phone number format
+    if (!preg_match('/^\+9705\d{8}$/', $phone_number)) {
+        $errorMessages = "<span style='color: red; padding-right: 100px;'>يجب ان يكون رقم الهاتف بهذه الصيغة <strong>9705XXXXXXXX+</strong></span>";
+
+    }
+
+    // If there are no errors, proceed with database insertion
+    if (empty($errorMessages)) {
+        $sql = "INSERT INTO contact (full_name, email, phone_number, message) 
+                VALUES ('$full_name', '$email', '$phone_number', '$user_message')";
+
+        if ($conn->query($sql) === TRUE) {
+            $message = "تم إرسال رسالتك بنجاح!"; // Success message
+            $full_name = $email = $phone_number = $user_message = ""; // Clear variables
+        } else {
+            $message = "حدث خطأ أثناء إرسال الرسالة: " . $conn->error; // Error message
+        }
+    }
+}
+
+// Close connection
+$conn->close();
+?>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,7 +79,7 @@
     <img src="../images/metodologia2.jpg" alt="Background image" class="Background">
     <nav class="navstyle">
         <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الصفحة الرئيسية</span>
+            <span>الصفحة الرئيسية</span> 
         </a> 
         <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>الأكاديمية</span>
@@ -39,7 +90,7 @@
         <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>الشروط والأحكام</span>
         </a> 
-        <a href="../html/Contact.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>تواصل معنا</span>
         </a> 
         <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
@@ -48,7 +99,17 @@
         <a href="../html/SignUp.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>سجِّل الآن</span>
         </a>
-      </nav>
+       <!-- Dropdown Menu -->
+       <div class="dropdown">
+        <a href="#" style="text-decoration: none; color: blanchedalmond;">
+            <span>قائمة الخيارات</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
+            <a href="#"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
+        </div>
+    </div>
+  </nav>
 
       <div class="message animate-from-below">
         <h1>تواصل معنا</h1>
@@ -107,37 +168,44 @@
         </div>
 
 
-        <div class="form">
-            <h2>
-                هل لديك أسئلة أو تحتاج إلى دعم أو جلسة استشارية مجانية؟
-            </h2>
-            
-            <div class="input-fields">
-
-                <div>
-                    <label for="fName">الاسم الكامل</label>
-                    <input type="text" required id="fName" placeholder="ادخل اسمك الكامل" title="الاسم الكامل"> 
-                </div>
-                
-                 <div>
-                    <label for="email">البريد الالكتروني</label>
-                    <input type="email" required title="البريد الالكتروني" id="email" placeholder="ادخل بريدك الالكتروني"> 
-                </div>
-                
-                <div>
-                    <label for="phone">رقم الهاتف</label>
-                    <input type="text" required title="رقم الهاتف" id="phone" placeholder="ادخل رقم هاتفك"> 
-                </div>
-            
-                <div>
-                    <label for="the-message">الرسالة</label>
-                    <textarea required title="الرسالة" id="the-message" placeholder="ادخل رسالتك"></textarea>
-                </div>
-
-                <button id="contact-button" onclick="sendMessage()">ارسال</button>
+        <div class="form" id="form-section">
+    <h2>هل لديك أسئلة أو تحتاج إلى دعم أو جلسة استشارية مجانية؟</h2>
+    <form action="Contact.php#form-section" method="post">
+        <div class="input-fields">
+            <div class="form-group">
+                <label for="fName">الاسم الكامل</label>
+                <input type="text" required id="fName" name="full_name" placeholder="ادخل اسمك الكامل" title="الاسم الكامل" value="<?php echo htmlspecialchars($full_name ?? '', ENT_QUOTES); ?>">
             </div>
-
+            <div class="form-group">
+                <label for="email">البريد الالكتروني</label>
+                <input type="email" required id="email" name="email" placeholder="ادخل بريدك الالكتروني" title="البريد الالكتروني" value="<?php echo htmlspecialchars($email ?? '', ENT_QUOTES); ?>">
+            </div>
+            <div class="form-group">
+                <label for="phone">رقم الهاتف</label>
+                <input type="text" required id="phone" name="phone_number" placeholder="ادخل رقم هاتفك" title="رقم الهاتف" value="<?php echo htmlspecialchars($phone_number ?? '', ENT_QUOTES); ?>">
+            </div>
+            <div class="form-group">
+                <label for="the-message">الرسالة</label>
+                <span>لا يجب ان تتجاوز الرسالة اكثر من 1000 حرف</span>
+                <textarea required id="the-message" name="message" placeholder="ادخل رسالتك" title="الرسالة" maxlength="1000"><?php echo htmlspecialchars($user_message ?? '', ENT_QUOTES); ?></textarea>
+            </div>
+            <button type="submit" id="contact-button">ارسال</button>
         </div>
+
+        <!-- Success or Error Message -->
+        <div class="response-message">
+            <?php if (!empty($message)) echo htmlspecialchars($message, ENT_QUOTES); ?>
+        </div>
+        <!-- Error Message Display -->
+    <?php if (!empty($errorMessages)) { echo "<p class='error'>$errorMessages</p>"; } ?>
+
+    
+    </form>
+</div>
+
+
+
+
 
       </div>
 

@@ -17,4 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
         backToSignupButton.style.display = "none";
         alreadySubscribedButton.style.display = "inline-block";
     });
+<<<<<<< Updated upstream
 });
+=======
+});
+>>>>>>> Stashed changes
