@@ -55,6 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Submit'])) {
     }
 }
 
+
+
 $conn->close();
 ?>
 
@@ -88,6 +90,9 @@ $conn->close();
 </script>
 
 
+<script src="../JavaScript/dropMenuToggle.js">
+    
+</script>
 </head>
 <body>
         <img src="../images/football-training-equipment-4.jpg" alt="Background image" class="Background">
@@ -236,17 +241,11 @@ $conn->close();
             </div>
 
             <div class="form-row">
-<<<<<<< Updated upstream
-            <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
-            <button id="request-button" type="button">ارسال الطلب</button>
-=======
                 <button id="already-subscribed" type="button" class="button">تسجيل الدخول</button>
                 <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
->>>>>>> Stashed changes
         </div>
     </div>
-
-        </form>
+    </form>
  <!-- Login Form -->
  <div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
         <h2>تسجيل الدخول</h2>
@@ -259,20 +258,20 @@ $conn->close();
            
         </div>
         <div class="form-row">
-           
+        
             <div class="form-group">
                 <label for="password">كلمة المرور</label>
                 <input type="password" required title="كلمة المرور" id="login-password">
             </div>
-        
-           
+    
         </div>
         <div class="form-row">
             <button id="back-to-signup" type="button" class="button">ارسال الطلب</button>
-            <button id="login-button" type="button">تسجيل الدخول</button>
+            <button id="login-button" type="button" onclick="toggleDropdownVisibility()">تسجيل الدخول</button>
         </div>
     </div>
 </div>
+
 <div class="styleadjust">
     <footer class="onlyForAnimation animate-from-below">
         <h3>ابقى على اطلاع بأخر التحديثات</h3>
@@ -314,5 +313,4 @@ $conn->close();
         </div>
     </footer>
 </div>
-
 </html>

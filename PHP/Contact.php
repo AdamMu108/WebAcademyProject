@@ -73,6 +73,7 @@ $conn->close();
 <script src="../JavaScript/AnimateFromBelow.js">
     
 </script>
+<script src="../JavaScript/dropMenuToggle.js"></script>
 
 </head>
 <body>
