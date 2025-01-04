@@ -222,12 +222,38 @@ $conn->close();
             </div>
 
             <div class="form-row">
-                <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
-            </div>
+            <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
+            <button id="request-button" type="button">ارسال الطلب</button>
+        </div>
+    </div>
+
         </form>
+ <!-- Login Form -->
+ <div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
+        <h2>تسجيل الدخول</h2>
+        <div class="form-row">
+           
+            <div class="form-group">
+                <label for="login-email">البريد الالكتروني</label>
+                <input type="email" required title="البريد الالكتروني" id="login-email"> 
+            </div>
+           
+        </div>
+        <div class="form-row">
+           
+            <div class="form-group">
+                <label for="password">كلمة المرور</label>
+                <input type="password" required title="كلمة المرور" id="login-password">
+            </div>
+        
+           
+        </div>
+        <div class="form-row">
+            <button id="back-to-signup" type="button" class="button">ارسال الطلب</button>
+            <button id="login-button" type="button">تسجيل الدخول</button>
+        </div>
     </div>
 </div>
-
 <div class="styleadjust">
     <footer class="onlyForAnimation animate-from-below">
         <h3>ابقى على اطلاع بأخر التحديثات</h3>
