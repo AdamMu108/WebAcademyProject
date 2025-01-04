@@ -5,7 +5,16 @@
     <title>FootBall Academy</title>
     <link rel="stylesheet" href="../CSS/Manhaj.css">
     <link rel="stylesheet" href="../CSS/master.css">
-    <script src="../JavaScript/Manhaj.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="../JavaScript/Manhaj.js">
+    </script>
+
+    <script src="../JavaScript/NavigateTosignupButton.js">
+    </script>
+
+<script src="../JavaScript/AnimateFromBelow.js">
+    
+</script>
 </head>
 <body>
     <img src="../images/metodologia2.jpg" alt="Background image" class="Background" style="z-index: 0.5;">
@@ -22,19 +31,21 @@
         <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>الشروط والأحكام</span>
         </a> 
-
-    
         <a href="../html/Contact.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>تواصل معنا</span>
         </a> 
-        <a href="../html/SignUp.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الأخبار</span>
+        </a> 
+        <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
             <span>سجِّل الآن</span>
         </a>
+
       </nav>
       <div>
         <p class="manhaj">المنهج</p>
       </div>
-      <div class="BackgroundBoxes">
+      <div class="BackgroundBoxes animate-from-below">
         <div class="fourBoxes">
             <button class="Box1" onclick="showContent('content1')">15 - 17</button>
             <button class="Box1" onclick="showContent('content2')">13 - 14</button>
@@ -116,7 +127,7 @@
             </div>
         </div>
         <div id="content3" class="content">
-            <div><p class="ageRangeText" style="margin-top: 270px;">الفئة العمرية من سن 10 حتى 12 سنة</p></div>
+            <div><p class="ageRangeText" >الفئة العمرية من سن 10 حتى 12 سنة</p></div>
             <div class="gridBoxes">
                 <div class="Box2">التفاعل</div>
                 <div class="Box2">الثقة</div>
@@ -153,18 +164,7 @@
                 <div class="Box2">الأهداف الفردية</div>
                 <div class="Box2">حل المشاكل</div>
                 
-                <div class="Box2">التغذية</div>
-                <div class="Box2">الاستشفاء</div>
-                <div class="Box2">المسؤولية</div>
-                <div class="Box2">الرياضة</div>
-                <div class="Box2">التنمية</div>
-                <div class="Box2">الوعي</div>
-                <div class="Box2">التخطيط</div>
-                <div class="Box2">القيادة</div>
-                <div class="Box2">الإبداع</div>
-                <div class="Box2">العمل الجماعي</div>
-                <div class="Box2">التنظيم</div>
-                <div class="Box2">احترام الذات</div>
+              
             </div>
         </div>
         <div id="content4" class="content">
@@ -208,9 +208,52 @@
         </div>       
         
     </div>
-    <h1 class="special">!!كن جزءا من فريقنا!!</h1>
+    <h1 class="special animate-from-below">!!كن جزءا من فريقنا!!</h1>
         <div style="display: flex; justify-content: center; align-items: center;">
-            <button class="button">سجّل الان</button>
+            <button class="button animate-from-below" onclick="navigateToSignUpForm()">سجّل الان</button>
         </div>  
+
+
+        <div class="styleadjust">
+            <footer class="onlyForAnimation animate-from-below">
+                <h3>ابقى على اطلاع بأخر التحديثات</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <h4>روابط</h4>
+                        <ul>
+                            <li><a href="../html/index.html">الصفحة الرئيسية</a></li>
+                            <li><a href="../html/Manhaj.html">المنهج</a></li>
+                            <li><a href="../html/academy.html">الأكاديمية</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>مصادر</h4>
+                        <ul>
+                            <li><a href="../html/News.html">الأخبار</a></li>
+                            <li><a href="../html/Contact.html">تواصل معنا</a></li>
+                            <li><a href="../html/SignUp.html">سجل الآن</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <h4>جهات الاتصال</h4>
+                        <p style="color: rgb(194, 194, 194);">رفيديا, نابلس</p>
+                        <p style="color: rgb(194, 194, 194);">055 000 0000</p>
+                        <p style="color: rgb(194, 194, 194);">050 000 0000</p>
+                        <p><a href="mailto:test@gmail.com" style="color: white;">test@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="bottom">
+                    حقوق النشر © 2025. جميع الحقوق محفوظة. رفيديا, نابلس<br>
+                    طورت بواسطة أكاديمية الكابتن
+                </div>
+            </footer>
+        </div>
 </body>
 </html>

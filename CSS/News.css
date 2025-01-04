@@ -19,6 +19,26 @@
     object-fit: cover;
   }
 
+  .swiper-pagination-bullet-active {
+    opacity: var(--swiper-pagination-bullet-opacity, 1);
+    background:  #6ac098;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  position: absolute;
+  top: var(--swiper-navigation-top-offset, 50%);
+  width: calc(var(--swiper-navigation-size) / 44* 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(0px -(var(--swiper-navigation-size) / 2));
+  z-index: 10;
+  cursor: pointer;
+  display: flex
+;
+  align-items: center;
+  justify-content: center;
+  color:  #6ac098;
+}
+
   /* General Gallery Styles */
 /* Main Div Styling */
 .image-gallery {
@@ -134,7 +154,7 @@
 }
 
 .modal-images .image-wrapper.selected {
-  border: 3px solid #007bff;
+  border: 3px solid #6ac098;
 }
 
 .close {
@@ -148,7 +168,7 @@
 
 .download-button {
   padding: 10px 20px;
-  background: #007bff;
+  background: #6ac098;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -158,5 +178,14 @@
 }
 
 .download-button:hover {
-  background: #0056b3;
+  background: #5a9f7a;
+}
+
+.btn{
+  background: #6ac098;
+  border: none;
+}
+
+.btn:hover{
+  background: #5a9f7a;
 }
