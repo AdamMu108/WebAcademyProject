@@ -7,7 +7,7 @@ function sendMessage() {
 
     // Email and phone number validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const phoneRegex = /+\d{12}/;
+    const phoneRegex = /^0\d{9}$/;
 
     if (!fullName || !email || !phone || !message) {
         alert('الرجاء ملء جميع الحقول المطلوبة');
