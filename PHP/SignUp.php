@@ -155,7 +155,7 @@ $conn->close();
         </a>
         <div class="dropdown-content">
             <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
-            <a href="#"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
+            <a href="#" onclick="logout()"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
         </div>
     </div>
   </nav>
@@ -276,38 +276,28 @@ $conn->close();
         </div>
     </div>
     </form>
-<!-- Login Form -->
-<div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
-    <h2>تسجيل الدخول</h2>
-
-    <!-- Display login error messages -->
-    <?php if (!empty($loginErrorMessages)) : ?>
-        <ul style="color: red; text-align: right; direction: rtl;">
-            <?php foreach ($loginErrorMessages as $error) : ?>
-                <li><?php echo htmlspecialchars_decode($error); ?></li>
-            <?php endforeach; ?>
-        </ul>
-    <?php endif; ?>
-
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#form-section" method="post">
-        <div class="form-row">
-            <div class="form-group">
-                <label for="login-email">البريد الالكتروني</label>
-                <input type="email" required title="البريد الالكتروني" id="login-email" name="login-email">
-            </div>
+  <!-- Login Form -->
+  <div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
+            <h2>تسجيل الدخول</h2>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#form-section" method="post">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="login-email">البريد الالكتروني</label>
+                        <input type="email" required title="البريد الالكتروني" id="login-email" name="login-email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="login-password">كلمة المرور</label>
+                        <input type="password" required title="كلمة المرور" id="login-password" name="login-password">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button id="back-to-signup" type="button" class="button">العودة إلى التسجيل</button>
+                    <input id="login-button" type="submit" name="Login" value="تسجيل الدخول">
+                </div>
+            </form>
         </div>
-        <div class="form-row">
-            <div class="form-group">
-                <label for="login-password">كلمة المرور</label>
-                <input type="password" required title="كلمة المرور" id="login-password" name="login-password">
-            </div>
-        </div>
-        <div class="form-row">
-            <button id="back-to-signup" type="button" class="button">العودة إلى التسجيل</button>
-            <input id="login-button" type="submit" name="Login" value="تسجيل الدخول">
-        </div>
-    </form>
-</div>
     </div>
 
 <div class="styleadjust">
