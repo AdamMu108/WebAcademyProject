@@ -65,7 +65,7 @@ $conn->close();
 <script src="../JavaScript/NavigateTosignupButton.js">
     
 </script>
-
+<script src="../JavaScript/notifications.js"></script>
 <script src="../JavaScript/ContactButton.js">
     
 </script>
@@ -79,38 +79,41 @@ $conn->close();
 <body>
     <img src="../images/metodologia2.jpg" alt="Background image" class="Background">
     <nav class="navstyle">
-        <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الصفحة الرئيسية</span> 
-        </a> 
-        <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الأكاديمية</span>
-        </a> 
-        <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>المنهج</span>
-        </a> 
-        <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الشروط والأحكام</span>
-        </a> 
-        <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>تواصل معنا</span>
-        </a> 
-        <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الأخبار</span>
-        </a> 
-        <a href="../html/SignUp.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>سجِّل الآن</span>
-        </a>
-       <!-- Dropdown Menu -->
-       <div class="dropdown">
+    <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الصفحة الرئيسية</span> 
+    </a> 
+    <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الأكاديمية</span>
+    </a> 
+    <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>المنهج</span>
+    </a> 
+    <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الشروط والأحكام</span>
+    </a> 
+    <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>تواصل معنا</span>
+    </a> 
+    <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الأخبار</span>
+    </a> 
+    <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>سجِّل الآن</span>
+    </a>
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
         <a href="#" style="text-decoration: none; color: blanchedalmond;">
             <span>قائمة الخيارات</span>
         </a>
         <div class="dropdown-content">
-            <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
-            <a href="#"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
+            <a href="#" id="notification-item">
+                <i id="notification-bell" class="fa-solid fa-bell"></i>
+                <span id="notification-count" class="notification-badge">0</span> الاشعارات
+            </a>
+            <a href="#" onclick="logout()"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
         </div>
     </div>
-  </nav>
+</nav>
 
       <div class="message animate-from-below">
         <h1>تواصل معنا</h1>

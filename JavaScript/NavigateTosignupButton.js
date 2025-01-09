@@ -1,3 +1,3 @@
 function navigateToSignUpForm() {
-    window.location.href = '../PHP/SignUp#programs-card';
+    window.location.href = '../PHP/SignUp.php#programs-card';
 }

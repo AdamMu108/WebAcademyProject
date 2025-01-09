@@ -23,45 +23,48 @@ $userEmail = $_SESSION['user_email'];
     <link rel="stylesheet" href="../CSS/dashboard.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="../JavaScript/dropMenuToggle.js"></script>
+    <script src="../JavaScript/notifications.js"></script>
 </head>
 <body>
     <img src="../images/football-training-equipment-4.jpg" alt="Background image" class="Background">
     
     <!-- Navigation Bar -->
     <nav class="navstyle">
-        <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الصفحة الرئيسية</span> 
-        </a> 
-        <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الأكاديمية</span>
-        </a> 
-        <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>المنهج</span>
-        </a> 
-        <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الشروط والأحكام</span>
-        </a> 
-        <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>تواصل معنا</span>
-        </a> 
-        <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>الأخبار</span>
-        </a> 
-        <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
-            <span>سجِّل الآن</span>
+    <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الصفحة الرئيسية</span> 
+    </a> 
+    <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الأكاديمية</span>
+    </a> 
+    <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>المنهج</span>
+    </a> 
+    <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الشروط والأحكام</span>
+    </a> 
+    <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>تواصل معنا</span>
+    </a> 
+    <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>الأخبار</span>
+    </a> 
+    <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+        <span>سجِّل الآن</span>
+    </a>
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+        <a href="#" style="text-decoration: none; color: blanchedalmond;">
+            <span>قائمة الخيارات</span>
         </a>
-        
-        <!-- Dropdown Menu -->
-        <div class="dropdown">
-            <a href="#" style="text-decoration: none; color: blanchedalmond;">
-                <span>قائمة الخيارات</span>
+        <div class="dropdown-content">
+            <a href="#" id="notification-item">
+                <i id="notification-bell" class="fa-solid fa-bell"></i>
+                <span id="notification-count" class="notification-badge">0</span> الاشعارات
             </a>
-            <div class="dropdown-content">
-                <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
-                <a href="#" onclick="logout()"><i id="logout" class="fa-solid fa-right-from-bracket"></i> تسجيل الخروج</a>
-            </div>
+            <a href="#" onclick="logout()"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Dashboard Content -->
     <div class="dashboard-container">
