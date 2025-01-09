@@ -118,7 +118,7 @@ $conn->close();
 <script src="../JavaScript/transformToLoginButton.js">
     
 </script>
-
+<script src="../JavaScript/notifications.js"></script>
 
 <script src="../JavaScript/dropMenuToggle.js">
     
@@ -154,7 +154,10 @@ $conn->close();
             <span>قائمة الخيارات</span>
         </a>
         <div class="dropdown-content">
-            <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
+        <a href="#" id="notification-item">
+            <i id="notification-bell" class="fa-solid fa-bell"></i>
+            <span id="notification-count" class="notification-badge">0</span> الاشعارات
+        </a>
             <a href="#" onclick="logout()"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
         </div>
     </div>
