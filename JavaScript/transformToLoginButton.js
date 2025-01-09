@@ -1,20 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const alreadySubscribedButton = document.getElementById("already-subscribed");
-    const backToSignupButton = document.getElementById("back-to-signup");
-    const signupForm = document.getElementById("signup-form");
-    const loginForm = document.getElementById("login-form");
-
-    alreadySubscribedButton.addEventListener("click", () => {
-        signupForm.style.display = "none";
-        loginForm.style.display = "block";
-        alreadySubscribedButton.style.display = "none";
-        backToSignupButton.style.display = "inline-block";
-    });
-
-    backToSignupButton.addEventListener("click", () => {
-        loginForm.style.display = "none";
-        signupForm.style.display = "block";
-        backToSignupButton.style.display = "none";
-        alreadySubscribedButton.style.display = "inline-block";
-    });
+// Toggle between Signup and Login forms
+document.getElementById('already-subscribed').addEventListener('click', function() {
+    document.getElementById('signup-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
 });
+
+document.getElementById('back-to-signup').addEventListener('click', function() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('signup-form').style.display = 'block';
+});
+
+// Automatically show the login form if there are login errors
+const loginErrorState = document.getElementById('login-error-state').value;
+if (loginErrorState === 'true') {
+    document.getElementById('signup-form').style.display = 'none';
+    document.getElementById('login-form').style.display = 'block';
+}

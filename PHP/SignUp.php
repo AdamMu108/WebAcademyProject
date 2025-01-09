@@ -1,4 +1,5 @@
 <?php
+
 require_once "../PHP/dp_connection.php";
 
 $errorMessages = [];
@@ -56,6 +57,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Submit'])) {
 }
 
 
+
+// Handle login form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Login'])) {
+    $email = $conn->real_escape_string($_POST['login-email']);
+    $password = $_POST['login-password'];
+
+    // Check if the email exists in the database
+    $sql = "SELECT * FROM trainers WHERE email = '$email'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        if (password_verify($password, $user['password'])) {
+            // Password is correct, start a session
+            session_start();
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_email'] = $user['email'];
+            $_SESSION['user_name'] = $user['full_name'];
+
+            // Redirect to a dashboard or home page
+            header("Location: dashboard.php");
+            exit();
+        } else {
+            $errorMessages[] = "كلمة المرور غير صحيحة";
+        }
+    } else {
+        $errorMessages[] = "البريد الإلكتروني غير مسجل";
+    }
+}
 
 $conn->close();
 ?>
@@ -246,31 +276,39 @@ $conn->close();
         </div>
     </div>
     </form>
- <!-- Login Form -->
- <div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
-        <h2>تسجيل الدخول</h2>
+<!-- Login Form -->
+<div class="SignUp-form animate-from-below" id="login-form" style="display: none;">
+    <h2>تسجيل الدخول</h2>
+
+    <!-- Display login error messages -->
+    <?php if (!empty($loginErrorMessages)) : ?>
+        <ul style="color: red; text-align: right; direction: rtl;">
+            <?php foreach ($loginErrorMessages as $error) : ?>
+                <li><?php echo htmlspecialchars_decode($error); ?></li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#form-section" method="post">
         <div class="form-row">
-           
             <div class="form-group">
                 <label for="login-email">البريد الالكتروني</label>
-                <input type="email" required title="البريد الالكتروني" id="login-email"> 
+                <input type="email" required title="البريد الالكتروني" id="login-email" name="login-email">
             </div>
-           
         </div>
         <div class="form-row">
-        
             <div class="form-group">
-                <label for="password">كلمة المرور</label>
-                <input type="password" required title="كلمة المرور" id="login-password">
+                <label for="login-password">كلمة المرور</label>
+                <input type="password" required title="كلمة المرور" id="login-password" name="login-password">
             </div>
-    
         </div>
         <div class="form-row">
-            <button id="back-to-signup" type="button" class="button">ارسال الطلب</button>
-            <button id="login-button" type="button" onclick="toggleDropdownVisibility()">تسجيل الدخول</button>
+            <button id="back-to-signup" type="button" class="button">العودة إلى التسجيل</button>
+            <input id="login-button" type="submit" name="Login" value="تسجيل الدخول">
         </div>
-    </div>
+    </form>
 </div>
+    </div>
 
 <div class="styleadjust">
     <footer class="onlyForAnimation animate-from-below">
