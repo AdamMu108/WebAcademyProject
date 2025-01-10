@@ -3,60 +3,98 @@ require_once "../PHP/dp_connection.php";
 
 $errorMessages = [];
 $successMessage = "";
+$loginError = "";
+$loginSuccess = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['Submit'])) {
-    $fullName = $conn->real_escape_string($_POST['FullName']);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Handle registration
+    if (isset($_POST['Submit'])) {
+        $fullName = $conn->real_escape_string($_POST['FullName']);
+        $email = $conn->real_escape_string($_POST['Email']);
+        $password = $_POST['Password'];
+        $confPassword = $_POST['ConfPassword'];
+        $registrationType = $conn->real_escape_string($_POST['RegistrationType']);
+        $phoneNumber = $conn->real_escape_string($_POST['PhoneNumber']);
+        $date = $_POST['Date'];
+        $bloodType = $conn->real_escape_string($_POST['BloddType']);
+        $passwordMatch = true;
+
+        // Validate email uniqueness
+        $emailCheck = "SELECT email FROM trainers WHERE email = '$email'";
+        $result = $conn->query($emailCheck);
+        if ($result->num_rows > 0) {
+            $errorMessages[] = "<strong>الايميل مستخدم بالفعل</strong>";
+        }
+
+        // Validate phone number format
+        if (!preg_match('/^\+9705\d{8}$/', $phoneNumber)) {
+            $errorMessages[] = "يجب ان يكون رقم الهاتف بهذه الصيغة <strong> .9705XXXXXXXX</strong>+";
+        }
+
+        // Validate date range
+        $maxDate = "2017-01-01";
+        $minDate = "2008-01-01";
+        if ($date < $minDate || $date > $maxDate) {
+            $errorMessages[] = " يجب ان يكون التاريخ بين 01-01-2008 و 01-01-2017";
+        }
+
+        // Validate password confirmation
+        if ($password !== $confPassword) {
+            $errorMessages[] = "<strong>كلمة المرور غير متطابقة</strong>";
+            $passwordMatch = false;
+        } else {
+            $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+        }
+
+        if (empty($errorMessages)) {
+            $sql = "INSERT INTO trainers (full_name, email, password, phone_number, registration_type, blood_type, date)
+                    VALUES ('$fullName', '$email', '$hashedPassword', '$phoneNumber', '$registrationType', '$bloodType', '$date')";
+            if ($conn->query($sql) === TRUE) {
+                $successMessage = "<strong>!تم ارسال الطلب بنجاح </strong>";
+                // Clear form values
+                $_POST = [];
+            } else {
+                $errorMessages[] = "Error: " . $conn->error;
+            }
+        }
+    }
+
+    // Handle login
+if (isset($_POST['Login'])) {
     $email = $conn->real_escape_string($_POST['Email']);
     $password = $_POST['Password'];
-    $confPassword = $_POST['ConfPassword'];
-    $registrationType = $conn->real_escape_string($_POST['RegistrationType']);
-    $phoneNumber = $conn->real_escape_string($_POST['PhoneNumber']);
-    $date = $_POST['Date'];
-    $bloodType = $conn->real_escape_string($_POST['BloddType']);
-    $passwordMatch = true;
 
-    // Validate email uniqueness
-    $emailCheck = "SELECT email FROM trainers WHERE email = '$email'";
-    $result = $conn->query($emailCheck);
+    // Check if the email exists in the database
+    $sql = "SELECT password FROM trainers WHERE email = '$email'";
+    $result = $conn->query($sql);
+
     if ($result->num_rows > 0) {
-        $errorMessages[] = "<strong>الايميل مستخدم بالفعل</strong>";
-    }
+        $row = $result->fetch_assoc();
+        $hashedPassword = $row['password'];
 
-    // Validate phone number format
-    if (!preg_match('/^\+9705\d{8}$/', $phoneNumber)) {
-        $errorMessages[] = "يجب ان يكون رقم الهاتف بهذه الصيغة <strong> .9705XXXXXXXX</strong>+";
-    }
-
-    // Validate date range
-    $maxDate = "2017-01-01";
-    $minDate = "2008-01-01";
-    if ($date < $minDate || $date > $maxDate) {
-        $errorMessages[] = " يجب ان يكون التاريخ بين 01-01-2008 و 01-01-2017";
-    }
-
-    // Validate password confirmation
-    if ($password !== $confPassword) {
-        $errorMessages[] = "<strong>كلمة المرور غير متطابقة</strong>";
-        $passwordMatch = false;
-    } else {
-        $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
-    }
-
-    if (empty($errorMessages)) {
-        $sql = "INSERT INTO trainers (full_name, email, password, phone_number, registration_type, blood_type, date)
-                VALUES ('$fullName', '$email', '$hashedPassword', '$phoneNumber', '$registrationType', '$bloodType', '$date')";
-        if ($conn->query($sql) === TRUE) {
-            $successMessage = "<strong>!تم ارسال الطلب بنجاح </strong>";
-            // Clear form values
-            $_POST = [];
+        // Verify the password
+        if (password_verify($password, $hashedPassword)) {
+            $loginSuccess = "<strong>تم تسجيل الدخول بنجاح</strong>";
+            
+            // Redirect to the login form
+            header("Location: {$_SERVER['PHP_SELF']}#login-form");
+            exit();
         } else {
-            $errorMessages[] = "Error: " . $conn->error;
+            $loginError = "<strong>كلمة المرور غير صحيحة</strong>";
         }
+    } else {
+        $loginError = "<strong>البريد الإلكتروني غير موجود</strong>";
     }
 }
 
+<<<<<<< Updated upstream
+=======
+}
+
+>>>>>>> Stashed changes
 $conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,23 +109,24 @@ $conn->close();
 
     </style>
 
-<script src="../JavaScript/SignUpButton.js">
-    
-</script>
+<script src="../JavaScript/SignUpButton.js"></script>
 
-<script src="../JavaScript/AnimateFromBelow.js">
-    
-</script>
+<script src="../JavaScript/AnimateFromBelow.js"></script>
 
-<script src="../JavaScript/subsButton.js">
-    
-</script>
+<script src="../JavaScript/subsButton.js"></script>
 
+<<<<<<< Updated upstream
 
+=======
+<script src="../JavaScript/transformToLoginButton.js"></script>
+
+<script src="../JavaScript/dropMenuToggle.js"></script>
+>>>>>>> Stashed changes
 </head>
 <body>
         <img src="../images/football-training-equipment-4.jpg" alt="Background image" class="Background">
         <nav class="navstyle">
+<<<<<<< Updated upstream
             <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
                 <span>الصفحة الرئيسية</span>
             </a> 
@@ -111,8 +150,43 @@ $conn->close();
             </a>
           </nav>
 </body>
+=======
+        <a href="../html/index.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الصفحة الرئيسية</span> 
+        </a> 
+        <a href="../html/academy.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الأكاديمية</span>
+        </a> 
+        <a href="../html/Manhaj.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>المنهج</span>
+        </a> 
+        <a href="../html/Rules.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الشروط والأحكام</span>
+        </a> 
+        <a href="../PHP/Contact.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>تواصل معنا</span>
+        </a> 
+        <a href="../html/News.html" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>الأخبار</span>
+        </a> 
+        <a href="../PHP/SignUp.php" style="text-decoration: none; color: blanchedalmond; margin: 0 10px;">
+            <span>سجِّل الآن</span>
+        </a>
+       <!-- Dropdown Menu -->
+       <div class="dropdown">
+        <a href="#" style="text-decoration: none; color: blanchedalmond;">
+            <span>قائمة الخيارات</span>
+        </a>
+        <div class="dropdown-content">
+            <a href="#"><i id="notification-bell" class="fa-solid fa-bell"></i> الاشعارات</a>
+            <a href="#"><i id="logout" class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a>
+        </div>
+    </div>
+  </nav>
+>>>>>>> Stashed changes
 
-<div class="programs-card-alignment animate-from-below" id="programs-card">
+
+    <div class="programs-card-alignment animate-from-below" id="programs-card">
     <div class="programs-card">
         <h2>شهري</h2>
         <p class="price">11.99 دولار/شهريًا</p>
@@ -159,6 +233,7 @@ $conn->close();
              </ul>
         <?php endif; ?>
 
+        
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>#form-section" method="post">
     <div class="form-row">
         <div class="form-group">
@@ -222,10 +297,50 @@ $conn->close();
             </div>
 
             <div class="form-row">
+<<<<<<< Updated upstream
                 <input id="request-button" type="submit" name="Submit" value="ارسال الطلب">
             </div>
         </form>
     </div>
+=======
+                <button id="already-subscribed" type="button" class="button">تسجيل الدخول</button>
+                <input id="request-button" type="submit" name="Submit" value="تأكيد الاشتراك">
+        </div>
+        </form>
+    </div>
+    
+ 
+ <!-- Login Form -->
+<div class="SignUp-form animate-from-below" id="login-form">
+    <h2>تسجيل الدخول</h2>
+    
+        <div class="form-row">
+            <div class="form-group">
+                <label for="login-email">البريد الالكتروني</label>
+                <input type="email" name="Email" required title="البريد الالكتروني" id="login-email">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="login-password">كلمة المرور</label>
+                <input type="password" name="Password" required title="كلمة المرور" id="login-password">
+            </div>
+        </div>
+        <div class="form-row">
+            <button id="back-to-signup" type="button" class="button">اشتراك</button>
+            <button id="login-button" type="submit" name="Login" class="button">تسجيل الدخول</button>
+        </div>
+    </form>
+    <!-- Display login success or error messages -->
+    <?php if (!empty($loginSuccess)) : ?>
+        <p style="color: green; text-align: center;"><?php echo htmlspecialchars_decode($loginSuccess); ?></p>
+    <?php elseif (!empty($loginError)) : ?>
+        <p style="color: red; text-align: center;"><?php echo htmlspecialchars_decode($loginError); ?></p>
+    <?php endif; ?>
+</div>
+
+
+>>>>>>> Stashed changes
 </div>
 
 <div class="styleadjust">

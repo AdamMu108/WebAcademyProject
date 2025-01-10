@@ -154,11 +154,75 @@ body .programs-card-alignment{
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+<<<<<<< Updated upstream
 #request-button:hover {
+=======
+#already-subscribed,#back-to-signup{
+    width: 20%;
+    height: 35px;
+
+}
+
+#request-button:hover ,#login-button:hover{
+
+    background-color: #6ac098;
+    color: white;
+}
+
+
+#request-button:hover ,#login-button:hover,#already-subscribed:hover,#back-to-signup:hover{
+
+>>>>>>> Stashed changes
     transform: scale(1.02);
     background-color: #5a9f7a;
 }
 
 html {
     scroll-behavior: smooth;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+
+#signup-form, #login-form {
+    transition: all 0.3s ease-in-out;
+}
+
+#signup-form.hidden, #login-form.hidden {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5%;
+    margin-top: 1rem;
+}
+
+.button-row .login-btn {
+    flex: 0 0 75%;
+    max-width: 75%;
+}
+
+.button-row #back-to-signup {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+
+/* Ensure consistent button appearance */
+.button-row button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+
+}
+>>>>>>> Stashed changes

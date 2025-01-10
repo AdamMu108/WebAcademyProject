@@ -1,0 +1,19 @@
+trainers:
+
+CREATE TABLE `footballacademydb`.`trainers` (
+    `id` INT NOT NULL AUTO_INCREMENT,
+    `full_name` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `phone_number` VARCHAR(13) NOT NULL,
+    `registration_type` ENUM('monthly', 'yearly') NOT NULL,
+    `blood_type` ENUM('O+', 'A+', 'B+', 'AB+', 'A-', 'B-', 'AB-', 'O-') NOT NULL,
+    `date` DATE NOT NULL,
+    `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    PRIMARY KEY (`id`)
+) ENGINE = InnoDB;
+___________________________________
+contact:
+
+CREATE TABLE `footballacademydb`.`contact` (`id` INT NOT NULL AUTO_INCREMENT , `full_name` VARCHAR(100) NOT NULL , `email` VARCHAR(100) NOT NULL , `phone_number` VARCHAR(13) NOT NULL , `message` VARCHAR(1000) NOT NULL , `sent_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`)) ENGINE = InnoDB;
